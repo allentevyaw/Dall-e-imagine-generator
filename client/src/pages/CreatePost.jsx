@@ -17,6 +17,10 @@ const CreatePost = () => {
   const [generatingImg, setgeneratingImg] = useState(true)
   const [loading, setLoading] = useState(false)
 
+  const handleGenerateImage = () => {
+
+  }
+
   const handleSubmit = () => {
 
   }
@@ -85,8 +89,17 @@ const CreatePost = () => {
                   </div>
                 )}
             </div>
-
           </div>
+
+        <div className='mt-5 flex gap-5'>
+          <button
+            type='button'
+            onClick={handleGenerateImage}
+          >
+              {generatingImg ? 'Generating...' : 'Generate'}
+          </button>  
+        </div>
+
         </form>
     </section>
   )
