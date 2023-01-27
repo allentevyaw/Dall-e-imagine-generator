@@ -19,6 +19,8 @@ const CreatePost = () => {
 
   const handleGenerateImage = () => {
 
+    
+
   }
 
   const handleSubmit = () => {
