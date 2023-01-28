@@ -19,6 +19,28 @@ const [allPosts, setallPosts] = useState(null)
 
 const [searchText, setsearchText] = useState('ABC')
 
+useEffect(() => {
+const fetchPosts = async () => {
+    setloading(true)
+
+    try {
+        const response = await fetch('http://localhost:8080/api/v1/post', {
+            method: 'GET',
+            header: {
+                'Content-Type' : 'application/json',
+            }
+        })
+
+    } catch (error) {
+
+    } finally {
+        setloading(false)
+    }
+}
+
+fetchPosts()
+}, [])
+
   return (
     <section className='max-w-7xl mx-auto'>
         <div>
