@@ -36,9 +36,7 @@ const Card = ({ _id, name, prompt, photo}) => {
                   className='w-6 h-6 object-contain invert' />
             </button>
         </div>
-
       </div>
-
     </div>
   )
 }
