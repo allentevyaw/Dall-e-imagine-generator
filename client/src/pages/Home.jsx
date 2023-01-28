@@ -28,11 +28,17 @@ const fetchPosts = async () => {
             method: 'GET',
             header: {
                 'Content-Type' : 'application/json',
-            }
+            },
         })
 
-    } catch (error) {
+        if(response.ok) {
+            const result = await response.json();
 
+            setallPosts(result.data.reverse())
+        }
+
+    } catch (error) {
+        alert(error)
     } finally {
         setloading(false)
     }
@@ -73,12 +79,12 @@ fetchPosts()
                     {searchText ? 
                     (
                         <RenderCards 
-                        data={[]}
+                        data={allPosts}
                         title='No search results found'
                         />
                     ) : (
                         <RenderCards 
-                        data={[]}
+                        data={allPosts}
                         title='No posts found'
                         />
                     )}
